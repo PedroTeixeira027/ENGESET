@@ -27,10 +27,11 @@ header .logo {
 header ul {
     list-style-type: none;
     display: flex;
-    gap: 20px; /* Ajustando o gap para telas menores */
+    gap: 100px; /* Ajustando o gap para telas menores */
     margin: 0;
     padding: 0;
     justify-content: flex-end;
+    margin-right: 100px;
 }
 
 header ul li a {
@@ -212,5 +213,164 @@ footer {
     /* Ajustar o carrossel */
     .carousel {
         width: 90%;
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #DBE1E0;
+    padding: 20px;
+}
+
+.contact-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-section h1 {
+    font-size: 36px;
+    color: #009b3f;
+    margin-bottom: 20px;
+}
+
+.contact-container-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 containers por linha */
+    gap: 100px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.contact-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px; /* Deixar os containers levemente arredondados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container:hover {
+    transform: scale(1.05); /* Animação ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container a {
+    text-decoration: none;
+    color: #009b3f;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Media Queries para Design Responsivo */
+@media (max-width: 768px) {
+    .contact-container-row {
+        grid-template-columns: 1fr; /* Um container por linha em telas menores */
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-section h1 {
+        font-size: 28px;
+    }
+
+    .contact-container a {
+        font-size: 20px;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Altura total menos o header e footer */
+    padding: 20px;
+    background-color: #DBE1E0; /* Cor de fundo opcional */
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%; /* Ocupar a largura disponível */
+    max-width: 1200px; /* Limite máximo de largura */
+}
+
+/* Resto do CSS permanece igual */
+.about-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-rows: repeat(2, auto); /* 2 linhas */
+    gap: 20px;
+    flex: 4;
+    max-width: 800px;
+}
+
+.about-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-container h2 {
+    font-size: 20px;
+    color: #009b3f;
+    margin-bottom: 10px;
+}
+
+.about-container p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 15px;
+    }
+
+    .about-container h2 {
+        font-size: 18px;
+    }
+
+    .about-container p {
+        font-size: 13px;
     }
 }
